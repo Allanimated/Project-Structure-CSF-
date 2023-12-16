@@ -15,20 +15,21 @@ export default class BST {
 
     search(value) {
         if (this.root.data === value) {
-            return true;
+        return true;
         } else {
-            let currentNode = this.root;
-            while (true) {
+        let currentNode = this.root;
+        while (true) {
             if (currentNode.data === value) {
-                return true;
+            return true;
             } else if (currentNode.data > value) {
-                currentNode = currentNode.left;
+            currentNode = currentNode.left;
+            } else if (currentNode.data < value) {
+            currentNode = currentNode.right;
             }
-            // The conditional below is new.
             if (currentNode === null) {
-                return false;
+            return false;
             }
-            }
+        }
         }
     }
 };
